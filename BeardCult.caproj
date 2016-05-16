@@ -16,13 +16,14 @@
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
-        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
-    <used-effects />
+    <used-effects>
+        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -39,6 +40,7 @@
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Hide address bar">No</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
         <prop name="Preview browser">(default)</prop>
         <prop name="Sampling">Linear</prop>
         <prop name="Use iOS retina display">All devices</prop>
@@ -51,16 +53,16 @@
         <object-type name="Player" sid="9567289171136865">
             <plugin id="Sprite" />
             <behaviors>
-                <behavior-type name="Platform" sid="7332262212870097">
-                    <behavior id="Platform" />
-                </behavior-type>
                 <behavior-type name="ScrollTo" sid="1674357602072301">
                     <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="249388970876608">
+                    <behavior id="EightDir" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2026911589938101" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -73,16 +75,13 @@
             </behaviors>
             <texture />
         </object-type>
-        <object-type name="MovingSolidTile" sid="793864645443064">
+        <object-type name="CultivatedSkin" sid="793864645443064">
             <plugin id="TiledBg" />
-            <behaviors>
-                <behavior-type name="Solid" sid="5160817839174901">
-                    <behavior id="solid" />
-                </behavior-type>
-                <behavior-type name="Sine" sid="2327375507373082">
-                    <behavior id="Sin" />
-                </behavior-type>
-            </behaviors>
+            <effects>
+                <effect-type name="AdjustHSL">
+                    <effect id="hsladjust" />
+                </effect-type>
+            </effects>
             <texture />
         </object-type>
         <object-type name="JumpThruTile" sid="7075637430366838">
