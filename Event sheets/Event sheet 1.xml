@@ -3,6 +3,35 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <event-block sid="5511351507453719">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="4261506075482893" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="7331234665023567" type="Text">
+                    <param id="0" name="Text">&quot;Health&quot; &amp; Player.Health</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8888835027181234">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="9293580747037125" type="Projectile" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="9932287392389225" type="Projectile" />
+            </actions>
+        </event-block>
+        <event-block sid="6043060200983346">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="680677114764893" type="Projectile">
+                    <param id="0" name="Object">Enemy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="9772740006785295" type="Enemy" />
+                <action id="-9" name="Destroy" sid="1548612728324378" type="Projectile" />
+            </actions>
+        </event-block>
         <comment>Use the down arrow to allow the player to deliberately drop down through a jump-thru platform.</comment>
         <event-block sid="233002241940732">
             <conditions>
@@ -21,6 +50,23 @@
                 <action id="4" name="Set animation" sid="1435734470320742" type="Player">
                     <param id="0" name="Animation">&quot;Waterring&quot;</param>
                     <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9209402876299269">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="2651611204645408" type="Keyboard">
+                    <param id="0" name="Key">32 (Leer)</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="858341019826278" type="Player">
+                    <param id="0" name="Object">BeardCrop</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="4537320552753986" type="Player">
+                    <param id="0" name="Object">Projectile</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">1</param>
                 </action>
             </actions>
         </event-block>
@@ -160,23 +206,6 @@
             <actions />
         </event-block>
         <event-group description="Moving and attacking" sid="2161738022442759" title="Enemy Ai" />
-        <event-block sid="8191755399492936">
-            <conditions>
-                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="5080312092958709" type="Enemy">
-                    <param id="0" name="Object">BeardCrop</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-22" name="Set angle toward position" sid="8039986126047844" type="Enemy">
-                    <param id="0" name="X">BeardCrop.X</param>
-                    <param id="1" name="Y">BeardCrop.Y</param>
-                </action>
-                <action id="4" name="Set animation" sid="1437629950348067" type="Enemy">
-                    <param id="0" name="Animation">&quot;Movement&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="3307899999434938">
             <conditions>
                 <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="2075344409557158" type="Enemy">
@@ -229,13 +258,41 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="5852343045579489">
+        <event-block sid="7096148845544755">
             <conditions>
-                <condition id="-1" name="Every tick" sid="5313433413636433" type="System" />
+                <condition id="-4" name="Is outside layout" sid="3331408949166651" type="Enemy" />
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="9589246461940101" type="Text">
-                    <param id="0" name="Text">&quot;Health&quot; &amp; Player.Health</param>
+                <action id="-22" name="Set angle toward position" sid="1401222292426575" type="Enemy">
+                    <param id="0" name="X">random(2048)</param>
+                    <param id="1" name="Y">random(1024)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9205256940139293">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="6318032569607239" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4620505148216727" type="Player" />
+            </actions>
+        </event-block>
+        <event-block sid="9106007963628324">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="9597125821044388" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="1713894128952898" type="System">
+                    <param id="0" name="Object to create">Enemy</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">random(2048)</param>
+                    <param id="3" name="Y">random(1024)</param>
                 </action>
             </actions>
         </event-block>

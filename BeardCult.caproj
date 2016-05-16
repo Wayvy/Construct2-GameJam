@@ -14,14 +14,14 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="shadowlight" version="1">Shadow Light</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
-        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
-        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -29,8 +29,8 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>640</width>
-        <height>480</height>
+        <width>800</width>
+        <height>600</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
@@ -49,7 +49,7 @@
     <object-folder>
         <object-type name="BackgroundTile" sid="2065425363964153">
             <plugin id="TiledBg" />
-            <texture />
+            <texture original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\backgrounds\mouth2.png" />
         </object-type>
         <object-type name="Player" sid="9567289171136865">
             <plugin id="Sprite" />
@@ -63,10 +63,14 @@
                 <behavior-type name="8Direction" sid="249388970876608">
                     <behavior id="EightDir" />
                 </behavior-type>
+                <behavior-type name="ShadowCaster" sid="9386384251022157">
+                    <behavior id="shadowcaster" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2026911589938101" speed="5">
                     <frame duration="1" hotspotX="0.501458" hotspotY="0.5" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player_idle.png">
+                        <image-point name="Imagepoint 1" x="1.07872" y="0.502857" />
                         <collision-poly>
                             <point x="0.236152" y="0.768571" />
                             <point x="0.12828" y="0.5" />
@@ -87,6 +91,7 @@
                 </animation>
                 <animation framecount="2" loop="1" name="Movement" pingpong="0" repeatcount="1" repeatto="0" sid="7438640123131167" speed="5">
                     <frame duration="1" hotspotX="0.501458" hotspotY="0.5" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player1.png">
+                        <image-point name="Imagepoint 1" x="1.00292" y="0.528571" />
                         <collision-poly>
                             <point x="0.236152" y="0.768571" />
                             <point x="0.131195" y="0.5" />
@@ -98,6 +103,7 @@
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.501458" hotspotY="0.5" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player2.png">
+                        <image-point name="Imagepoint 1" x="1.00292" y="0.485714" />
                         <collision-poly>
                             <point x="0.236152" y="0.768571" />
                             <point x="0.131195" y="0.5" />
@@ -117,15 +123,6 @@
             <behaviors>
                 <behavior-type name="Solid" sid="9835545300998313">
                     <behavior id="solid" />
-                </behavior-type>
-            </behaviors>
-            <texture />
-        </object-type>
-        <object-type name="JumpThruTile" sid="7075637430366838">
-            <plugin id="TiledBg" />
-            <behaviors>
-                <behavior-type name="Jumpthru" sid="6821945594691224">
-                    <behavior id="jumpthru" />
                 </behavior-type>
             </behaviors>
             <texture />
@@ -173,22 +170,50 @@
                 <behavior-type name="Bullet" sid="1515746745221277">
                     <behavior id="Bullet" />
                 </behavior-type>
-                <behavior-type name="BoundToLayout" sid="7235407709692181">
-                    <behavior id="bound" />
-                </behavior-type>
                 <behavior-type name="Solid" sid="8170523462328157">
                     <behavior id="solid" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9161103364150926" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501484" hotspotY="0.5" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\enemy\enemy1.png">
+                        <collision-poly>
+                            <point x="0.195846" y="0.778524" />
+                            <point x="0.0830861" y="0.5" />
+                            <point x="0.169139" y="0.191275" />
+                            <point x="0.498516" y="0.100671" />
+                            <point x="0.875371" y="0.14094" />
+                            <point x="0.821958" y="0.5" />
+                            <point x="0.833828" y="0.812081" />
+                            <point x="0.498516" y="0.869128" />
+                        </collision-poly>
+                    </frame>
                 </animation>
-                <animation framecount="4" loop="1" name="Movement" pingpong="0" repeatcount="1" repeatto="0" sid="6040645508925294" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="2" loop="1" name="Movement" pingpong="0" repeatcount="1" repeatto="0" sid="6040645508925294" speed="5">
+                    <frame duration="1" hotspotX="0.501484" hotspotY="0.5" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\enemy\enemy1.png">
+                        <collision-poly>
+                            <point x="0.195846" y="0.778524" />
+                            <point x="0.0830861" y="0.5" />
+                            <point x="0.169139" y="0.191275" />
+                            <point x="0.498516" y="0.100671" />
+                            <point x="0.875371" y="0.14094" />
+                            <point x="0.821958" y="0.5" />
+                            <point x="0.833828" y="0.812081" />
+                            <point x="0.498516" y="0.869128" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501484" hotspotY="0.5" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\enemy\enemy2.png">
+                        <collision-poly>
+                            <point x="0.192878" y="0.781879" />
+                            <point x="0.0830861" y="0.5" />
+                            <point x="0.169139" y="0.191275" />
+                            <point x="0.498516" y="0.100671" />
+                            <point x="0.795252" y="0.231544" />
+                            <point x="0.928783" y="0.5" />
+                            <point x="0.738872" y="0.704698" />
+                            <point x="0.498516" y="0.869128" />
+                        </collision-poly>
+                    </frame>
                 </animation>
                 <animation framecount="4" loop="1" name="DestroyCrop" pingpong="0" repeatcount="1" repeatto="0" sid="2291947755434153" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -212,20 +237,40 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Projectile" sid="8441393493148658">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="7377144713701093">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2105466811909822" speed="5">
+                    <frame duration="1" hotspotX="1.47561" hotspotY="0.422222" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\bullets_player.png">
+                        <collision-poly>
+                            <point x="0.0313867" y="0.0458629" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.0756501" />
+                            <point x="1" y="0.418203" />
+                            <point x="1" y="0.879905" />
+                            <point x="1" y="1" />
+                            <point x="0" y="0.865012" />
+                            <point x="0" y="0.418203" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="1.92" hotspotY="0.7" />
+                    <frame duration="1" hotspotX="1.71795" hotspotY="0.609756" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ShadowLight" sid="6103840038239776">
+            <plugin id="shadowlight" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Mouth.xml</layout>
-        <layout>LeftFromMouth.xml</layout>
-        <layout>RightFromMouth.xml</layout>
-        <layout>Chin.xml</layout>
-        <layout>RightEye.xml</layout>
-        <layout>LeftEye.xml</layout>
-        <layout>LeftFromNose.xml</layout>
-        <layout>BelowNose.xml</layout>
-        <layout>RightFromNose.xml</layout>
-        <layout>LeftCheek.xml</layout>
-        <layout>RightCheek.xml</layout>
+        <layout>Bla.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>

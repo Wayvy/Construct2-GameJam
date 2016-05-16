@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Player</name>
+    <events>
+        <event-block sid="3913625524671027">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="7542506825393235" type="Player">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-43" name="Go to next/previous layout" sid="7630436042189492" type="System">
+                    <param id="0" name="Which">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6264088697493731">
+            <conditions>
+                <condition behavior="8Direction" id="0" name="Is moving" sid="8740746245176669" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="1329194757453761" type="Player">
+                    <param id="0" name="Animation">&quot;Movement&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1453940819505061">
+            <conditions>
+                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="5974572561953023" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="9133318743889421" type="Player">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9533626903444033">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="5393982554270846" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="8698231882744104" type="Text">
+                    <param id="0" name="Text">&quot;Health&quot; &amp; Player.Health</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="4221999122527931" title="Projectile" />
+        <event-block sid="9313680497007774">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="6228613390203873" type="Projectile" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="5575573613148067" type="Projectile" />
+            </actions>
+        </event-block>
+        <event-block sid="1155829687716969">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="256487026789179" type="Projectile">
+                    <param id="0" name="Object">Enemy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="3913667949014586" type="Enemy" />
+                <action id="-9" name="Destroy" sid="3358798945210505" type="Projectile" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
