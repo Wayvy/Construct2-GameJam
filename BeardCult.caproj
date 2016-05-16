@@ -17,7 +17,10 @@
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -51,6 +54,9 @@
         </object-type>
         <object-type name="Player" sid="9567289171136865">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Health" sid="3705237081346973" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="ScrollTo" sid="1674357602072301">
                     <behavior id="scrollto" />
@@ -61,7 +67,18 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2026911589938101" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.501458" hotspotY="0.5" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player_idle.png">
+                        <collision-poly>
+                            <point x="0.236152" y="0.768571" />
+                            <point x="0.12828" y="0.5" />
+                            <point x="0.259475" y="0.254286" />
+                            <point x="0.498542" y="0.177143" />
+                            <point x="0.755102" y="0.24" />
+                            <point x="0.784257" y="0.5" />
+                            <point x="0.793003" y="0.797143" />
+                            <point x="0.498542" y="0.862857" />
+                        </collision-poly>
+                    </frame>
                 </animation>
                 <animation framecount="4" loop="0" name="Waterring" pingpong="0" repeatcount="1" repeatto="0" sid="2486895749141776" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -69,11 +86,30 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
-                <animation framecount="4" loop="1" name="Movement" pingpong="0" repeatcount="1" repeatto="0" sid="7438640123131167" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                <animation framecount="2" loop="1" name="Movement" pingpong="0" repeatcount="1" repeatto="0" sid="7438640123131167" speed="5">
+                    <frame duration="1" hotspotX="0.501458" hotspotY="0.5" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player1.png">
+                        <collision-poly>
+                            <point x="0.236152" y="0.768571" />
+                            <point x="0.131195" y="0.5" />
+                            <point x="0.259475" y="0.254286" />
+                            <point x="0.498542" y="0.191429" />
+                            <point x="0.74344" y="0.251429" />
+                            <point x="0.819242" y="0.822857" />
+                            <point x="0.498542" y="0.865714" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.501458" hotspotY="0.5" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player2.png">
+                        <collision-poly>
+                            <point x="0.236152" y="0.768571" />
+                            <point x="0.131195" y="0.5" />
+                            <point x="0.259475" y="0.254286" />
+                            <point x="0.498542" y="0.185714" />
+                            <point x="0.798834" y="0.197143" />
+                            <point x="0.810496" y="0.5" />
+                            <point x="0.793003" y="0.797143" />
+                            <point x="0.498542" y="0.877143" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -132,8 +168,17 @@
         <object-type name="Enemy" sid="8679932659732492">
             <plugin id="Sprite" />
             <behaviors>
-                <behavior-type name="8Direction" sid="6479972783550329">
-                    <behavior id="EightDir" />
+                <behavior-type name="LineOfSight" sid="9450888059116997">
+                    <behavior id="LOS" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="1515746745221277">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="7235407709692181">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="8170523462328157">
+                    <behavior id="solid" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -147,6 +192,12 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
                 <animation framecount="4" loop="1" name="DestroyCrop" pingpong="0" repeatcount="1" repeatto="0" sid="2291947755434153" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="4" loop="1" name="Attack" pingpong="0" repeatcount="1" repeatto="0" sid="6519331255635073" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />

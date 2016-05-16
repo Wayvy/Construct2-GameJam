@@ -153,25 +153,83 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="9367578259177539">
-            <conditions />
-            <actions />
-        </event-block>
         <event-block sid="5906869539856156">
             <conditions />
             <actions />
         </event-block>
-        <event-block sid="9973615262775903">
+        <event-group description="Moving and attacking" sid="2161738022442759" title="Enemy Ai" />
+        <event-block sid="8191755399492936">
             <conditions>
-                <condition id="-1" name="Every tick" sid="8967227298732083" type="System" />
+                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="5080312092958709" type="Enemy">
+                    <param id="0" name="Object">BeardCrop</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="-22" name="Set angle toward position" sid="3332518530059439" type="Enemy">
+                <action id="-22" name="Set angle toward position" sid="8039986126047844" type="Enemy">
                     <param id="0" name="X">BeardCrop.X</param>
                     <param id="1" name="Y">BeardCrop.Y</param>
                 </action>
-                <action id="-17" name="Move forward" sid="6687058061943089" type="Enemy">
-                    <param id="0" name="Distance">1</param>
+                <action id="4" name="Set animation" sid="1437629950348067" type="Enemy">
+                    <param id="0" name="Animation">&quot;Movement&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3307899999434938">
+            <conditions>
+                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="2075344409557158" type="Enemy">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="1859833126460306" type="Enemy">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y</param>
+                </action>
+                <action id="4" name="Set animation" sid="7051752627392369" type="Enemy">
+                    <param id="0" name="Animation">&quot;Movement&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="642939219292206">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="9636016426243291" type="Enemy">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="2125209786132928" type="Player">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5852343045579489">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="5313433413636433" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="9589246461940101" type="Text">
+                    <param id="0" name="Text">&quot;Health&quot; &amp; Player.Health</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8561115782554575">
+            <conditions>
+                <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="9522894619499746" type="Enemy">
+                    <param id="0" name="Object">BeardCrop</param>
+                </condition>
+                <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="2755943016939176" type="Enemy">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="94109255573971" type="Enemy">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
                 </action>
             </actions>
         </event-block>
