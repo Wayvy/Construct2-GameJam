@@ -21,7 +21,6 @@
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
-        <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -63,56 +62,206 @@
                 <behavior-type name="8Direction" sid="249388970876608">
                     <behavior id="EightDir" />
                 </behavior-type>
-                <behavior-type name="ShadowCaster" sid="9386384251022157">
-                    <behavior id="shadowcaster" />
-                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2026911589938101" speed="5">
-                    <frame duration="1" hotspotX="0.501458" hotspotY="0.5" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player_idle.png">
-                        <image-point name="Imagepoint 1" x="1.07872" y="0.502857" />
+                    <frame duration="1" hotspotX="0.608414" hotspotY="0.507463" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player_idle_bucket_empty.png">
+                        <image-point name="Imagepoint 1" x="1.00647" y="0.498507" />
                         <collision-poly>
-                            <point x="0.236152" y="0.768571" />
-                            <point x="0.12828" y="0.5" />
-                            <point x="0.259475" y="0.254286" />
-                            <point x="0.498542" y="0.177143" />
-                            <point x="0.755102" y="0.24" />
-                            <point x="0.784257" y="0.5" />
-                            <point x="0.793003" y="0.797143" />
-                            <point x="0.498542" y="0.862857" />
+                            <point x="0.1537" y="0.855873" />
+                            <point x="0.00861433" y="0.494648" />
+                            <point x="0.18507" y="0.164165" />
+                            <point x="0.506612" y="0.0604094" />
+                            <point x="0.851681" y="0.144951" />
+                            <point x="0.890894" y="0.494648" />
+                            <point x="0.902658" y="0.894301" />
+                            <point x="0.506612" y="0.982686" />
                         </collision-poly>
                     </frame>
-                </animation>
-                <animation framecount="4" loop="0" name="Waterring" pingpong="0" repeatcount="1" repeatto="0" sid="2486895749141776" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
                 <animation framecount="2" loop="1" name="Movement" pingpong="0" repeatcount="1" repeatto="0" sid="7438640123131167" speed="5">
-                    <frame duration="1" hotspotX="0.501458" hotspotY="0.5" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player1.png">
-                        <image-point name="Imagepoint 1" x="1.00292" y="0.528571" />
+                    <frame duration="1" hotspotX="0.626263" hotspotY="0.501502" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player1_bucket_empty.png">
+                        <image-point name="Imagepoint 1" x="1.00673" y="0.525526" />
                         <collision-poly>
-                            <point x="0.236152" y="0.768571" />
-                            <point x="0.131195" y="0.5" />
-                            <point x="0.259475" y="0.254286" />
-                            <point x="0.498542" y="0.191429" />
-                            <point x="0.74344" y="0.251429" />
-                            <point x="0.819242" y="0.822857" />
-                            <point x="0.498542" y="0.865714" />
+                            <point x="0.775989" y="0.220366" />
+                            <point x="0.902628" y="0.533709" />
+                            <point x="0.747847" y="0.820384" />
+                            <point x="0.45939" y="0.893719" />
+                            <point x="0.163898" y="0.823717" />
+                            <point x="0.0724358" y="0.157031" />
+                            <point x="0.45939" y="0.107029" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.501458" hotspotY="0.5" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player2.png">
-                        <image-point name="Imagepoint 1" x="1.00292" y="0.485714" />
+                    <frame duration="1" hotspotX="0.62623" hotspotY="0.463636" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player2_bucket_empty.png">
+                        <image-point name="Imagepoint 1" x="1.00984" y="0.475758" />
                         <collision-poly>
-                            <point x="0.236152" y="0.768571" />
-                            <point x="0.131195" y="0.5" />
-                            <point x="0.259475" y="0.254286" />
-                            <point x="0.498542" y="0.185714" />
-                            <point x="0.798834" y="0.197143" />
-                            <point x="0.810496" y="0.5" />
-                            <point x="0.793003" y="0.797143" />
-                            <point x="0.498542" y="0.877143" />
+                            <point x="0.755635" y="0.204187" />
+                            <point x="0.878953" y="0.520379" />
+                            <point x="0.728231" y="0.80966" />
+                            <point x="0.44734" y="0.883662" />
+                            <point x="0.159599" y="0.813024" />
+                            <point x="0.0705358" y="0.140277" />
+                            <point x="0.44734" y="0.0898205" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="8" loop="1" name="Digging" pingpong="0" repeatcount="1" repeatto="0" sid="2486895749141776" speed="5">
+                    <frame duration="1" hotspotX="0.608414" hotspotY="0.501493" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player_idle_bucket_empty_digging.png">
+                        <collision-poly>
+                            <point x="0.165049" y="0.770149" />
+                            <point x="0.0453074" y="0.489552" />
+                            <point x="0.0873786" y="0.137313" />
+                            <point x="0.456311" y="0.152239" />
+                            <point x="0.708738" y="0.247761" />
+                            <point x="0.873786" y="0.489552" />
+                            <point x="0.747573" y="0.767164" />
+                            <point x="0.456311" y="0.868657" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.598706" hotspotY="0.504478" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player_idle_bucket_empty.png">
+                        <collision-poly>
+                            <point x="0.165049" y="0.770149" />
+                            <point x="0.0453074" y="0.489552" />
+                            <point x="0.0873786" y="0.137313" />
+                            <point x="0.456311" y="0.152239" />
+                            <point x="0.7411" y="0.21791" />
+                            <point x="0.773463" y="0.489552" />
+                            <point x="0.783172" y="0.8" />
+                            <point x="0.456311" y="0.868657" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.601942" hotspotY="0.507463">
+                        <collision-poly>
+                            <point x="0.165049" y="0.770149" />
+                            <point x="0.0453074" y="0.489552" />
+                            <point x="0.0873786" y="0.137313" />
+                            <point x="0.456311" y="0.152239" />
+                            <point x="0.708738" y="0.247761" />
+                            <point x="0.873786" y="0.489552" />
+                            <point x="0.747573" y="0.767164" />
+                            <point x="0.456311" y="0.868657" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.598706" hotspotY="0.504478">
+                        <collision-poly>
+                            <point x="0.165049" y="0.770149" />
+                            <point x="0.0453074" y="0.489552" />
+                            <point x="0.0873786" y="0.137313" />
+                            <point x="0.456311" y="0.152239" />
+                            <point x="0.7411" y="0.21791" />
+                            <point x="0.773463" y="0.489552" />
+                            <point x="0.783172" y="0.8" />
+                            <point x="0.456311" y="0.868657" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.605178" hotspotY="0.504478">
+                        <collision-poly>
+                            <point x="0.165049" y="0.770149" />
+                            <point x="0.0453074" y="0.489552" />
+                            <point x="0.0873786" y="0.137313" />
+                            <point x="0.456311" y="0.152239" />
+                            <point x="0.708738" y="0.247761" />
+                            <point x="0.873786" y="0.489552" />
+                            <point x="0.747573" y="0.767164" />
+                            <point x="0.456311" y="0.868657" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.605178" hotspotY="0.507463">
+                        <collision-poly>
+                            <point x="0.165049" y="0.770149" />
+                            <point x="0.0453074" y="0.489552" />
+                            <point x="0.0873786" y="0.137313" />
+                            <point x="0.456311" y="0.152239" />
+                            <point x="0.7411" y="0.21791" />
+                            <point x="0.773463" y="0.489552" />
+                            <point x="0.783172" y="0.8" />
+                            <point x="0.456311" y="0.868657" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.605178" hotspotY="0.504478">
+                        <collision-poly>
+                            <point x="0.165049" y="0.770149" />
+                            <point x="0.0453074" y="0.489552" />
+                            <point x="0.0873786" y="0.137313" />
+                            <point x="0.456311" y="0.152239" />
+                            <point x="0.708738" y="0.247761" />
+                            <point x="0.873786" y="0.489552" />
+                            <point x="0.747573" y="0.767164" />
+                            <point x="0.456311" y="0.868657" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.598706" hotspotY="0.507463">
+                        <collision-poly>
+                            <point x="0.165049" y="0.770149" />
+                            <point x="0.0453074" y="0.489552" />
+                            <point x="0.0873786" y="0.137313" />
+                            <point x="0.456311" y="0.152239" />
+                            <point x="0.7411" y="0.21791" />
+                            <point x="0.773463" y="0.489552" />
+                            <point x="0.783172" y="0.8" />
+                            <point x="0.456311" y="0.868657" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="WithLiquidIdle" pingpong="0" repeatcount="1" repeatto="0" sid="4006329081944088" speed="5">
+                    <frame duration="1" hotspotX="0.605178" hotspotY="0.498507" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player_idle_bucket_full.png">
+                        <collision-poly>
+                            <point x="0.165049" y="0.770149" />
+                            <point x="0.0453074" y="0.489552" />
+                            <point x="0.0873786" y="0.137313" />
+                            <point x="0.456311" y="0.152239" />
+                            <point x="0.7411" y="0.21791" />
+                            <point x="0.773463" y="0.489552" />
+                            <point x="0.783172" y="0.8" />
+                            <point x="0.456311" y="0.868657" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="1" name="WithLiquidMoving" pingpong="0" repeatcount="1" repeatto="0" sid="6143578393078839" speed="5">
+                    <frame duration="1" hotspotX="0.619529" hotspotY="0.507508" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player1_bucket_full.png">
+                        <collision-poly>
+                            <point x="0.164983" y="0.771772" />
+                            <point x="0.043771" y="0.489489" />
+                            <point x="0.0808081" y="0.132132" />
+                            <point x="0.468013" y="0.165165" />
+                            <point x="0.750842" y="0.228228" />
+                            <point x="0.838384" y="0.828829" />
+                            <point x="0.468013" y="0.873874" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.636066" hotspotY="0.466667" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player2_bucket_full.png">
+                        <collision-poly>
+                            <point x="0.75941" y="0.755597" />
+                            <point x="0.457377" y="0.866914" />
+                            <point x="0.0750164" y="0.8329" />
+                            <point x="0.110361" y="0.477304" />
+                            <point x="0.177836" y="0.217563" />
+                            <point x="0.820459" y="0.137168" />
+                            <point x="0.868656" y="0.477304" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="1" name="WithLiquidDigging" pingpong="0" repeatcount="1" repeatto="0" sid="5308347938393753" speed="5">
+                    <frame duration="1" hotspotX="0.608414" hotspotY="0.510448" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\player\player_idle_bucket_full_digging.png">
+                        <collision-poly>
+                            <point x="0.159806" y="0.21389" />
+                            <point x="0.457929" y="0.104234" />
+                            <point x="0.83534" y="0.13774" />
+                            <point x="0.800453" y="0.488029" />
+                            <point x="0.733851" y="0.743893" />
+                            <point x="0.0995469" y="0.823089" />
+                            <point x="0.0519741" y="0.488029" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.601942" hotspotY="0.501493">
+                        <collision-poly>
+                            <point x="0.750809" y="0.208955" />
+                            <point x="0.867314" y="0.489552" />
+                            <point x="0.831715" y="0.844776" />
+                            <point x="0.459547" y="0.81194" />
+                            <point x="0.187702" y="0.749254" />
+                            <point x="0.10356" y="0.152239" />
+                            <point x="0.459547" y="0.107463" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -150,14 +299,6 @@
                 </animation>
                 <animation framecount="1" loop="0" name="Level3" pingpong="0" repeatcount="1" repeatto="0" sid="6698990605221084" speed="5">
                     <frame duration="1" hotspotX="1" hotspotY="2.28125" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Pimple" sid="639548742588165">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5569849183208603" speed="5">
-                    <frame duration="1" hotspotX="-0.0625" hotspotY="2.21875" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -229,11 +370,53 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Hair" sid="2284583946443938">
+        <object-type name="UpperHairLeft" sid="2284583946443938">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="GrowthLevel" sid="9621807267861074" type="number" />
+            </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2294463382037263" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.898148" hotspotY="6.68023" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\backgrounds\beard_mouth_above.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.899622" y="0" />
+                            <point x="1" y="0" />
+                            <point x="0.795321" y="1" />
+                            <point x="1" y="0.500319" />
+                            <point x="0.899622" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Middle" pingpong="0" repeatcount="1" repeatto="0" sid="8843921915099089" speed="5">
+                    <frame duration="1" hotspotX="1.00697" hotspotY="-0.0459519">
+                        <collision-poly>
+                            <point x="0.102207" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="0.995354" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="0.116144" y="0.512035" />
+                            <point x="0.240418" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Dense" pingpong="0" repeatcount="1" repeatto="0" sid="4735909643607873" speed="5">
+                    <frame duration="1" hotspotX="0.948805" hotspotY="1.1958">
+                        <collision-poly>
+                            <point x="0.0625711" y="0.573427" />
+                            <point x="0.948805" y="0.160839" />
+                            <point x="1" y="0.748252" />
+                            <point x="0.937429" y="1" />
+                            <point x="1" y="0.899767" />
+                            <point x="0.948805" y="1" />
+                            <point x="0.076223" y="1" />
+                            <point x="0.197952" y="1" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -265,6 +448,176 @@
         </object-type>
         <object-type name="ShadowLight" sid="6103840038239776">
             <plugin id="shadowlight" />
+        </object-type>
+        <object-type name="Mouth" sid="2181468193004827">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="7852947542214852">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6155826114487977" speed="5">
+                    <frame duration="1" hotspotX="0.463912" hotspotY="0.381182" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\backgrounds\mouth_only.png">
+                        <collision-poly>
+                            <point x="0.421025" y="0.0603136" />
+                            <point x="0.501569" y="0.179735" />
+                            <point x="0.596757" y="0.0844391" />
+                            <point x="0.9409" y="0.260555" />
+                            <point x="0.739017" y="0.677925" />
+                            <point x="0.55387" y="0.800965" />
+                            <point x="0.319561" y="0.665863" />
+                            <point x="0.155858" y="0.279855" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LowerHair" sid="7092470137352522">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="GrowthLevel" sid="371167492899071" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="946910120654341" speed="5">
+                    <frame duration="1" hotspotX="-1.87376" hotspotY="-0.808219" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\backgrounds\beard_mouth_below.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0" y="0" />
+                            <point x="0.712126" y="0" />
+                            <point x="0" y="0" />
+                            <point x="0" y="0" />
+                            <point x="0" y="0" />
+                            <point x="0" y="0.993151" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Middle" pingpong="0" repeatcount="1" repeatto="0" sid="6581636872451111" speed="5">
+                    <frame duration="1" hotspotX="1.42599" hotspotY="-0.109375">
+                        <collision-poly>
+                            <point x="0.144737" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="0.164474" y="1" />
+                            <point x="0.34046" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Dense" pingpong="0" repeatcount="1" repeatto="0" sid="201487003418766" speed="5">
+                    <frame duration="1" hotspotX="1.05972" hotspotY="2.25">
+                        <collision-poly>
+                            <point x="0.0698856" y="1" />
+                            <point x="1" y="0.302631" />
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="0.0851334" y="1" />
+                            <point x="0.221093" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="UpperHairRight" sid="4770500296505878">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="GrowthLevel" sid="4773469894351491" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6722948897114762" speed="5">
+                    <frame duration="1" hotspotX="0.101852" hotspotY="6.68023" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\backgrounds\beard_mouth_above.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="1" y="1" />
+                            <point x="0.100378" y="1" />
+                            <point x="0" y="0.500319" />
+                            <point x="0.204679" y="1" />
+                            <point x="0" y="0" />
+                            <point x="0.100378" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Middle" pingpong="0" repeatcount="1" repeatto="0" sid="9473408746931383" speed="5">
+                    <frame duration="1" hotspotX="-0.00696864" hotspotY="-0.0459519">
+                        <collision-poly>
+                            <point x="0.759582" y="0" />
+                            <point x="0.883856" y="0.512035" />
+                            <point x="0" y="0" />
+                            <point x="0" y="0" />
+                            <point x="0.004646" y="0" />
+                            <point x="0" y="0" />
+                            <point x="0" y="0" />
+                            <point x="0.897793" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Dense" pingpong="0" repeatcount="1" repeatto="0" sid="8702369105426354" speed="5">
+                    <frame duration="1" hotspotX="0.0511945" hotspotY="1.1958">
+                        <collision-poly>
+                            <point x="0.802048" y="1" />
+                            <point x="0.923777" y="1" />
+                            <point x="0.051195" y="1" />
+                            <point x="0" y="0.899767" />
+                            <point x="0.062571" y="1" />
+                            <point x="0" y="0.748252" />
+                            <point x="0.051195" y="0.160839" />
+                            <point x="0.937429" y="0.573427" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Liquid" sid="1163342761193135">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="ResourceLevel" sid="5907480101628776" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3530994851762357" speed="0">
+                    <frame duration="1" hotspotX="0.4" hotspotY="0.5" original-source="C:\Users\Wavy\workspace\Games\Finn and Wavy Jam\Files\Sprites\backgrounds\liquid.png">
+                        <collision-poly>
+                            <point x="0" y="0.230769" />
+                            <point x="0.402736" y="0" />
+                            <point x="0.807258" y="0.230769" />
+                            <point x="1" y="0.467456" />
+                            <point x="1" y="0.901381" />
+                            <point x="0.402736" y="1" />
+                            <point x="0" y="0.74359" />
+                            <point x="0" y="0.467456" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.390244" hotspotY="0.487179">
+                        <collision-poly>
+                            <point x="0" y="0.230769" />
+                            <point x="0.402736" y="0" />
+                            <point x="0.807258" y="0.230769" />
+                            <point x="1" y="0.467456" />
+                            <point x="1" y="0.901381" />
+                            <point x="0.402736" y="1" />
+                            <point x="0" y="0.74359" />
+                            <point x="0" y="0.467456" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.3875" hotspotY="0.4875">
+                        <collision-poly>
+                            <point x="0" y="0.230769" />
+                            <point x="0.402736" y="0" />
+                            <point x="0.807258" y="0.230769" />
+                            <point x="1" y="0.467456" />
+                            <point x="1" y="0.901381" />
+                            <point x="0.402736" y="1" />
+                            <point x="0" y="0.74359" />
+                            <point x="0" y="0.467456" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

@@ -9,30 +9,67 @@
             </conditions>
             <actions>
                 <action id="0" name="Set text" sid="7331234665023567" type="Text">
-                    <param id="0" name="Text">&quot;Health&quot; &amp; Player.Health</param>
+                    <param id="0" name="Text">&quot;Health&quot; &amp; Player.Health &amp; Liquid.ResourceLevel</param>
+                </action>
+                <action id="5" name="Set frame" sid="2658089243654424" type="Liquid">
+                    <param id="0" name="Frame number">Liquid.ResourceLevel</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="8888835027181234">
+        <comment>Use the down arrow to allow the player to deliberately drop down through a jump-thru platform.</comment>
+        <event-group description="" sid="3418678692637052" title="Player Behavior" />
+        <event-block sid="6706555253266109">
             <conditions>
-                <condition id="-4" name="Is outside layout" sid="9293580747037125" type="Projectile" />
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="9932287392389225" type="Projectile" />
-            </actions>
-        </event-block>
-        <event-block sid="6043060200983346">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="680677114764893" type="Projectile">
-                    <param id="0" name="Object">Enemy</param>
+                <condition id="2" name="Key is down" sid="4644811777689191" type="Keyboard">
+                    <param id="0" name="Key">32 (Leer)</param>
+                </condition>
+                <condition id="2" inverted="1" name="Is playing" sid="6715489574136637" type="Player">
+                    <param id="0" name="Animation">&quot;WithLiquidIdle&quot;</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="5077000509294199" type="Player">
+                    <param id="0" name="Object">Liquid</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="9772740006785295" type="Enemy" />
-                <action id="-9" name="Destroy" sid="1548612728324378" type="Projectile" />
+                <action id="4" name="Set animation" sid="3784636079136425" type="Player">
+                    <param id="0" name="Animation">&quot;Digging&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="1587242752987838">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="5392168421582728" type="Player">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="8571833328990108" type="Player">
+                            <param id="0" name="Animation">&quot;WithLiquidIdle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="9209402876299269">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="2651611204645408" type="Keyboard">
+                    <param id="0" name="Key">32 (Leer)</param>
+                </condition>
+                <condition id="2" inverted="1" name="Is playing" sid="858341019826278" type="Player">
+                    <param id="0" name="Animation">&quot;Digging&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="4537320552753986" type="Player">
+                    <param id="0" name="Object">Projectile</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
             </actions>
         </event-block>
-        <comment>Use the down arrow to allow the player to deliberately drop down through a jump-thru platform.</comment>
         <event-block sid="233002241940732">
             <conditions>
                 <condition id="0" name="On key pressed" sid="9293662696070292" type="Keyboard">
@@ -53,20 +90,58 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="9209402876299269">
+        <event-block sid="6043060200983346">
             <conditions>
-                <condition id="0" name="On key pressed" sid="2651611204645408" type="Keyboard">
-                    <param id="0" name="Key">32 (Leer)</param>
-                </condition>
-                <condition id="1" inverted="1" name="Is overlapping another object" sid="858341019826278" type="Player">
-                    <param id="0" name="Object">BeardCrop</param>
+                <condition id="0" name="On collision with another object" sid="680677114764893" type="Projectile">
+                    <param id="0" name="Object">Enemy</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Spawn another object" sid="4537320552753986" type="Player">
-                    <param id="0" name="Object">Projectile</param>
-                    <param id="1" name="Layer">2</param>
-                    <param id="2" name="Image point">1</param>
+                <action id="-9" name="Destroy" sid="9772740006785295" type="Enemy" />
+                <action id="-9" name="Destroy" sid="1548612728324378" type="Projectile" />
+            </actions>
+        </event-block>
+        <event-block sid="8888835027181234">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="9293580747037125" type="Projectile" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="9932287392389225" type="Projectile" />
+            </actions>
+        </event-block>
+        <event-block sid="9205256940139293">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="6318032569607239" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4620505148216727" type="Player" />
+            </actions>
+        </event-block>
+        <event-block sid="3221356664989251">
+            <conditions>
+                <condition behavior="8Direction" id="0" name="Is moving" sid="7670152255812461" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="2442293114218301" type="Player">
+                    <param id="0" name="Animation">&quot;Movement&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4298806626845033">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="7065491517075428" type="Player">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-43" name="Go to next/previous layout" sid="3969202046862722" type="System">
+                    <param id="0" name="Which">0</param>
                 </action>
             </actions>
         </event-block>
@@ -120,87 +195,7 @@
             </actions>
         </event-block>
         <comment></comment>
-        <event-block any="1" sid="3333642996004271">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="1507152331131847" type="BeardCrop">
-                    <param id="0" name="Instance variable">GrowingLevel</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="5043661210466757" type="BeardCrop">
-                    <param id="0" name="Animation">&quot;Level1&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block any="1" sid="7908172710083219">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="5051978668079448" type="BeardCrop">
-                    <param id="0" name="Instance variable">GrowingLevel</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">2</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="9853133440617084" type="BeardCrop">
-                    <param id="0" name="Animation">&quot;Level2&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="5791369959067">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="8567328879693908" type="BeardCrop">
-                    <param id="0" name="Instance variable">GrowingLevel</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="7318919750226065" type="BeardCrop">
-                    <param id="0" name="Animation">&quot;Level3&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
         <comment>If the player falls off the bottom of the layout, restart the level.</comment>
-        <event-block sid="4298806626845033">
-            <conditions>
-                <condition id="-2" name="Compare Y" sid="7065491517075428" type="Player">
-                    <param id="0" name="Comparison">4</param>
-                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-43" name="Go to next/previous layout" sid="3969202046862722" type="System">
-                    <param id="0" name="Which">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="3221356664989251">
-            <conditions>
-                <condition behavior="8Direction" id="0" name="Is moving" sid="7670152255812461" type="Player" />
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="2442293114218301" type="Player">
-                    <param id="0" name="Animation">&quot;Movement&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="4126506362926782">
-            <conditions>
-                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="9068430386914335" type="Player" />
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="9725291645215872" type="Player">
-                    <param id="0" name="Animation">&quot;Default&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="5906869539856156">
             <conditions />
             <actions />
@@ -269,18 +264,6 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="9205256940139293">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="6318032569607239" type="Player">
-                    <param id="0" name="Instance variable">Health</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="4620505148216727" type="Player" />
-            </actions>
-        </event-block>
         <event-block sid="9106007963628324">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="9597125821044388" type="System">
@@ -293,6 +276,47 @@
                     <param id="1" name="Layer">2</param>
                     <param id="2" name="X">random(2048)</param>
                     <param id="3" name="Y">random(1024)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1670646050414146">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6435648369981194" type="Enemy">
+                    <param id="0" name="Object">Mouth</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-18" name="Rotate clockwise" sid="2848940588766965" type="Enemy">
+                    <param id="0" name="Degrees">180</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4300322979649609">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="9801703196390076" type="Enemy">
+                    <param id="0" name="Object">UpperHairLeft</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="130253097838216">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="9592925715734555" type="System">
+                    <param id="0" name="Interval (seconds)">10</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="8908829667161706" type="System">
+                    <param id="0" name="First value">Liquid.ResourceLevel</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Second value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="1763869461280654" type="Liquid">
+                    <param id="0" name="Instance variable">ResourceLevel</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="2084740195973486" type="Liquid">
+                    <param id="0" name="Frame number">Liquid.ResourceLevel</param>
                 </action>
             </actions>
         </event-block>

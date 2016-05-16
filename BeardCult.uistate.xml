@@ -10,8 +10,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="1">Mouth</layout>
-        <event-sheet order="0">Event sheet 1</event-sheet>
+        <layout order="1">Mouth</layout>
+        <event-sheet active="1" order="0">Event sheet 1</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -30,9 +30,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="0" path="file-folder/Icons/" />
         <folder expanded="1" path="animation-folder/Player/" />
         <folder expanded="1" path="animation-folder/BeardCrop/" />
-        <folder expanded="1" path="animation-folder/Pimple/" />
         <folder expanded="1" path="animation-folder/Enemy/" />
-        <folder expanded="1" path="animation-folder/Hair/" />
+        <folder expanded="1" path="animation-folder/UpperHairLeft/" />
         <folder expanded="1" path="animation-folder/Projectile/" />
+        <folder expanded="1" path="animation-folder/Mouth/" />
+        <folder expanded="1" path="animation-folder/LowerHair/" />
+        <folder expanded="1" path="animation-folder/UpperHairRight/" />
+        <folder expanded="1" path="animation-folder/Liquid/" />
     </folders-expanded>
 </c2uistate>
