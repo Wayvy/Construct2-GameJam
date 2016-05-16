@@ -10,6 +10,7 @@
     <unique-id>3phjf8c2bcezm</unique-id>
     <saved-with-version>22700</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -21,9 +22,7 @@
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
-    <used-effects>
-        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
-    </used-effects>
+    <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -61,7 +60,19 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2026911589938101" speed="5">
+                <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2026911589938101" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="4" loop="0" name="Waterring" pingpong="0" repeatcount="1" repeatto="0" sid="2486895749141776" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="4" loop="1" name="Movement" pingpong="0" repeatcount="1" repeatto="0" sid="7438640123131167" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -73,15 +84,6 @@
                     <behavior id="solid" />
                 </behavior-type>
             </behaviors>
-            <texture />
-        </object-type>
-        <object-type name="CultivatedSkin" sid="793864645443064">
-            <plugin id="TiledBg" />
-            <effects>
-                <effect-type name="AdjustHSL">
-                    <effect id="hsladjust" />
-                </effect-type>
-            </effects>
             <texture />
         </object-type>
         <object-type name="JumpThruTile" sid="7075637430366838">
@@ -98,6 +100,62 @@
         </object-type>
         <object-type name="Text" sid="136255285342202">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="BeardCrop" sid="4512114866884804">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="GrowingLevel" sid="9885260090206708" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9952614767691934" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="2.28125" />
+                </animation>
+                <animation framecount="1" loop="0" name="Level1" pingpong="0" repeatcount="1" repeatto="0" sid="4524970995148172" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="2.28125" />
+                </animation>
+                <animation framecount="1" loop="0" name="Level2" pingpong="0" repeatcount="1" repeatto="0" sid="7640396719602972" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="2.28125" />
+                </animation>
+                <animation framecount="1" loop="0" name="Level3" pingpong="0" repeatcount="1" repeatto="0" sid="6698990605221084" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="2.28125" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Pimple" sid="639548742588165">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5569849183208603" speed="5">
+                    <frame duration="1" hotspotX="-0.0625" hotspotY="2.21875" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Enemy" sid="8679932659732492">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="8Direction" sid="6479972783550329">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9161103364150926" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="4" loop="1" name="Movement" pingpong="0" repeatcount="1" repeatto="0" sid="6040645508925294" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="4" loop="1" name="DestroyCrop" pingpong="0" repeatcount="1" repeatto="0" sid="2291947755434153" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="Array" sid="8122118031836668">
+            <plugin id="Arr" />
         </object-type>
     </object-folder>
     <families />

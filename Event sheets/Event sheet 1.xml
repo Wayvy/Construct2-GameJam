@@ -10,14 +10,17 @@
                     <param id="0" name="Key">32 (Leer)</param>
                 </condition>
                 <condition id="1" name="Is overlapping another object" sid="4403898945438127" type="Player">
-                    <param id="0" name="Object">CultivatedSkin</param>
+                    <param id="0" name="Object">BeardCrop</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-28" name="Set effect parameter" sid="3601811510544459" type="CultivatedSkin">
-                    <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
-                    <param id="1" name="Parameter index">2</param>
-                    <param id="2" name="Value">101010</param>
+                <action id="-11" name="Add to" sid="3601811510544459" type="BeardCrop">
+                    <param id="0" name="Instance variable">GrowingLevel</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="1435734470320742" type="Player">
+                    <param id="0" name="Animation">&quot;Waterring&quot;</param>
+                    <param id="1" name="From">1</param>
                 </action>
             </actions>
         </event-block>
@@ -72,12 +75,49 @@
         </event-block>
         <comment></comment>
         <event-block any="1" sid="3333642996004271">
-            <conditions />
-            <actions />
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="1507152331131847" type="BeardCrop">
+                    <param id="0" name="Instance variable">GrowingLevel</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="5043661210466757" type="BeardCrop">
+                    <param id="0" name="Animation">&quot;Level1&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
         </event-block>
         <event-block any="1" sid="7908172710083219">
-            <conditions />
-            <actions />
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="5051978668079448" type="BeardCrop">
+                    <param id="0" name="Instance variable">GrowingLevel</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="9853133440617084" type="BeardCrop">
+                    <param id="0" name="Animation">&quot;Level2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5791369959067">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="8567328879693908" type="BeardCrop">
+                    <param id="0" name="Instance variable">GrowingLevel</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="7318919750226065" type="BeardCrop">
+                    <param id="0" name="Animation">&quot;Level3&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
         </event-block>
         <comment>If the player falls off the bottom of the layout, restart the level.</comment>
         <event-block sid="4298806626845033">
@@ -89,6 +129,50 @@
             </conditions>
             <actions>
                 <action id="-26" name="Restart layout" sid="3969202046862722" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="3221356664989251">
+            <conditions>
+                <condition behavior="8Direction" id="0" name="Is moving" sid="7670152255812461" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="2442293114218301" type="Player">
+                    <param id="0" name="Animation">&quot;Movement&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4126506362926782">
+            <conditions>
+                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="9068430386914335" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="9725291645215872" type="Player">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9367578259177539">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="5906869539856156">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-block sid="9973615262775903">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="8967227298732083" type="System" />
+            </conditions>
+            <actions>
+                <action id="-22" name="Set angle toward position" sid="3332518530059439" type="Enemy">
+                    <param id="0" name="X">BeardCrop.X</param>
+                    <param id="1" name="Y">BeardCrop.Y</param>
+                </action>
+                <action id="-17" name="Move forward" sid="6687058061943089" type="Enemy">
+                    <param id="0" name="Distance">1</param>
+                </action>
             </actions>
         </event-block>
     </events>
