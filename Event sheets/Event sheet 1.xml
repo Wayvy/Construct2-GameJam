@@ -14,6 +14,15 @@
                 <action id="5" name="Set frame" sid="2658089243654424" type="Liquid">
                     <param id="0" name="Frame number">Liquid.ResourceLevel</param>
                 </action>
+                <action id="5" name="Set frame" sid="2406822382725473" type="UpperHairLeft">
+                    <param id="0" name="Frame number">UpperHairLeft.GrowthLevel</param>
+                </action>
+                <action id="5" name="Set frame" sid="9988002941053815" type="UpperHairRight">
+                    <param id="0" name="Frame number">UpperHairRight.GrowthLevel</param>
+                </action>
+                <action id="5" name="Set frame" sid="4691782324100273" type="LowerHair">
+                    <param id="0" name="Frame number">LowerHair.GrowthLevel</param>
+                </action>
             </actions>
         </event-block>
         <comment>Use the down arrow to allow the player to deliberately drop down through a jump-thru platform.</comment>
@@ -28,6 +37,9 @@
                 </condition>
                 <condition id="1" name="Is overlapping another object" sid="5077000509294199" type="Player">
                     <param id="0" name="Object">Liquid</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7165986375008364" type="Player">
+                    <param id="0" name="Instance variable">HasLiquid</param>
                 </condition>
             </conditions>
             <actions>
@@ -48,6 +60,14 @@
                         <action id="4" name="Set animation" sid="8571833328990108" type="Player">
                             <param id="0" name="Animation">&quot;WithLiquidIdle&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="5553900458032584" type="Player">
+                            <param id="0" name="Instance variable">HasLiquid</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="7516833146272439" type="Liquid">
+                            <param id="0" name="Instance variable">ResourceLevel</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -72,23 +92,132 @@
         </event-block>
         <event-block sid="233002241940732">
             <conditions>
-                <condition id="0" name="On key pressed" sid="9293662696070292" type="Keyboard">
+                <condition id="2" name="Key is down" sid="9293662696070292" type="Keyboard">
                     <param id="0" name="Key">32 (Leer)</param>
                 </condition>
                 <condition id="1" name="Is overlapping another object" sid="4403898945438127" type="Player">
-                    <param id="0" name="Object">BeardCrop</param>
+                    <param id="0" name="Object">UpperHairLeft</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="9824398708944992" type="Player">
+                    <param id="0" name="Instance variable">HasLiquid</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-11" name="Add to" sid="3601811510544459" type="BeardCrop">
-                    <param id="0" name="Instance variable">GrowingLevel</param>
-                    <param id="1" name="Value">1</param>
-                </action>
                 <action id="4" name="Set animation" sid="1435734470320742" type="Player">
-                    <param id="0" name="Animation">&quot;Waterring&quot;</param>
+                    <param id="0" name="Animation">&quot;WithLiquidDigging&quot;</param>
                     <param id="1" name="From">1</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="9004054223191981">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="4236448394070226" type="Player">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="9113728042301196" type="UpperHairLeft">
+                            <param id="0" name="Instance variable">GrowthLevel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="446839479591269" type="Player">
+                            <param id="0" name="Instance variable">HasLiquid</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="2030184241310888" type="Player">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3043638221472744">
+            <conditions>
+                <condition id="2" name="Key is down" sid="3600550832539708" type="Keyboard">
+                    <param id="0" name="Key">32 (Leer)</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="2576436805741171" type="Player">
+                    <param id="0" name="Object">UpperHairRight</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="3428078162955561" type="Player">
+                    <param id="0" name="Instance variable">HasLiquid</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="4855231272980918" type="Player">
+                    <param id="0" name="Animation">&quot;WithLiquidDigging&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="3147256427966259">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="2532239663879909" type="Player">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="2614192988844837" type="UpperHairRight">
+                            <param id="0" name="Instance variable">GrowthLevel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="6476260463410426" type="Player">
+                            <param id="0" name="Instance variable">HasLiquid</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="5951792588066797" type="Player">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5827889918131702">
+            <conditions>
+                <condition id="2" name="Key is down" sid="8872065612750902" type="Keyboard">
+                    <param id="0" name="Key">32 (Leer)</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="985476714048413" type="Player">
+                    <param id="0" name="Object">LowerHair</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="5250465181510711" type="Player">
+                    <param id="0" name="Instance variable">HasLiquid</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="8931802063922695" type="Player">
+                    <param id="0" name="Animation">&quot;WithLiquidDigging&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="202596634555065">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="3859887943171446" type="Player">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="8312681796322684" type="LowerHair">
+                            <param id="0" name="Instance variable">GrowthLevel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="1356526758856436" type="Player">
+                            <param id="0" name="Instance variable">HasLiquid</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="8808366007179034" type="Player">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="6043060200983346">
             <conditions>
@@ -99,6 +228,22 @@
             <actions>
                 <action id="-9" name="Destroy" sid="9772740006785295" type="Enemy" />
                 <action id="-9" name="Destroy" sid="1548612728324378" type="Projectile" />
+                <action id="0" name="Spawn another object" sid="6387551079965018" type="Enemy">
+                    <param id="0" name="Object">enemy_death_anim</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5041685666973191">
+            <conditions>
+                <condition id="3" name="Compare frame" sid="4143716498795016" type="enemy_death_anim">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="5195460728142653" type="enemy_death_anim" />
             </actions>
         </event-block>
         <event-block sid="8888835027181234">
@@ -125,12 +270,35 @@
             <conditions>
                 <condition behavior="8Direction" id="0" name="Is moving" sid="7670152255812461" type="Player" />
             </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="2442293114218301" type="Player">
-                    <param id="0" name="Animation">&quot;Movement&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="1286498129980668">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3955354375335642" type="Player">
+                            <param id="0" name="Instance variable">HasLiquid</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2442293114218301" type="Player">
+                            <param id="0" name="Animation">&quot;Movement&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1856503861937064">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="3607677980330299" type="Player">
+                            <param id="0" name="Instance variable">HasLiquid</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2871240235251075" type="Player">
+                            <param id="0" name="Animation">&quot;WithLiquidMoving&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="4298806626845033">
             <conditions>
@@ -239,9 +407,6 @@
         </event-block>
         <event-block sid="8561115782554575">
             <conditions>
-                <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="9522894619499746" type="Enemy">
-                    <param id="0" name="Object">BeardCrop</param>
-                </condition>
                 <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="2755943016939176" type="Enemy">
                     <param id="0" name="Object">Player</param>
                 </condition>
@@ -314,9 +479,6 @@
                 <action id="-11" name="Add to" sid="1763869461280654" type="Liquid">
                     <param id="0" name="Instance variable">ResourceLevel</param>
                     <param id="1" name="Value">1</param>
-                </action>
-                <action id="5" name="Set frame" sid="2084740195973486" type="Liquid">
-                    <param id="0" name="Frame number">Liquid.ResourceLevel</param>
                 </action>
             </actions>
         </event-block>

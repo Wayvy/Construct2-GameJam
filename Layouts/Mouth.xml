@@ -124,6 +124,7 @@
                     </properties>
                     <instance-variables>
                         <Health>10</Health>
+                        <HasLiquid>false</HasLiquid>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="ScrollTo">
@@ -142,6 +143,11 @@
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="BoundToLayout">
+                            <properties>
+                                <bound-by>Edge</bound-by>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -152,8 +158,8 @@
                         <width>56.502857208</width>
                         <height>62.507289886</height>
                         <depth>0</depth>
-                        <hotspotX>0.511326849</hotspotX>
-                        <hotspotY>0.49850747</hotspotY>
+                        <hotspotX>0.514563084</hotspotX>
+                        <hotspotY>0.50149256</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -253,14 +259,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-576</x>
-                        <y>752</y>
+                        <x>1136</x>
+                        <y>960</y>
                         <z>0</z>
-                        <width>705</width>
+                        <width>694</width>
                         <height>146</height>
                         <depth>0</depth>
-                        <hotspotX>-1.873758912</hotspotX>
-                        <hotspotY>-0.808219194</hotspotY>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.534246564</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -278,39 +284,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>800</x>
-                        <y>2352</y>
+                        <x>560</x>
+                        <y>240</y>
                         <z>0</z>
                         <width>648</width>
                         <height>344</height>
                         <depth>0</depth>
-                        <hotspotX>0.898148119</hotspotX>
-                        <hotspotY>6.680232525</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="UpperHairRight" uid="2">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <GrowthLevel>0</GrowthLevel>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>1360</x>
-                        <y>2336</y>
-                        <z>0</z>
-                        <width>648</width>
-                        <height>344</height>
-                        <depth>0</depth>
-                        <hotspotX>0.101851851</hotspotX>
-                        <hotspotY>6.680232525</hotspotY>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.517441869</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -335,6 +316,53 @@
                         <height>20</height>
                         <depth>0</depth>
                         <hotspotX>0.400000006</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="UpperHairRight" uid="2">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <GrowthLevel>0</GrowthLevel>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1680</x>
+                        <y>240</y>
+                        <z>0</z>
+                        <width>648</width>
+                        <height>344</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.514534891</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="enemy_death_anim" uid="11">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1360</x>
+                        <y>1168</y>
+                        <z>0</z>
+                        <width>33.900989532</width>
+                        <height>30.205608368</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
