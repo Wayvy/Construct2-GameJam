@@ -482,5 +482,29 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="2325204426027745">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="8508608546907766" type="UpperHairLeft">
+                    <param id="0" name="Instance variable">GrowthLevel</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="7783326021961966" type="LowerHair">
+                    <param id="0" name="Instance variable">GrowthLevel</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="8096406194446472" type="UpperHairRight">
+                    <param id="0" name="Instance variable">GrowthLevel</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="8581626904514968" type="Text">
+                    <param id="0" name="Text">&quot;YOU WIN&quot;</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
